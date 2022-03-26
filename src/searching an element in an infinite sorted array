@@ -1,0 +1,13 @@
+public class infinite_sorted_array {
+    static int searchInfinite(int a[],int key)
+    {
+        int low = 0;
+        int high = 1;
+        while(key>a[high])
+        {
+            low = high;
+            high = high*2;
+        }
+        return binarysearch(a,key,low,high);
+    }
+}
