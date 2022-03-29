@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class selection_sort {
+    public static void swap(int arr[],int a , int b)
+    {
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
+    public static void sort(int arr[],int si , int ei) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[min]) {
+                    min = j;
+                }
+            }
+
+            if (min != i) {
+                swap(arr, min, i);
+            }
+
+            for (int l = 0; l < arr.length; l++) {
+                System.out.println(arr[l]);
+            }
+        }
+    }
+    public static void main(String[] args)
+    {
+        selection_sort obj = new selection_sort();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the length of array");
+        int a = sc.nextInt();
+        int arr[] = new int[a];
+        for(int k = 0;k<a;k++)
+        {
+            arr[k] = sc.nextInt();
+        }
+        obj.sort(arr,0,a-1);
+    }
+}
+
